@@ -15,7 +15,7 @@ const paint = `
 const proof = [
   "Arte contemporáneo",
   "Obra original",
-  "Arte para tu hogar, proyecto o marca",
+  "Arte para tu colección, proyecto o marca",
 ];
 
 const headline = ["La", "vida", "no", "viene", "en", "colores", "discretos."];
@@ -54,7 +54,7 @@ export default function Hero() {
       />
 
       {/* Fondo animado de luz suave */}
-      <AmbientBg />
+     <AmbientBg intensity={2} />
 
       {/* Capa de color revelada por el foco de luz */}
       <div
