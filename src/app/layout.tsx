@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import "./motion.css";
 import { site } from "@/lib/site";
+import Motion from "@/components/Motion";
 
 // Las variables CSS coinciden con --font-display y --font-body de globals.css
 const display = Cormorant_Garamond({
@@ -37,7 +39,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <Motion />
+        {children}
+      </body>
     </html>
   );
 }
