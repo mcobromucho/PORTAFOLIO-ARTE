@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0c0c0d;
+  --bone: #ebe6dc;
+  --ultra: #4f5bff;
+}
+
+/* Tailwind v4: aquí se registran colores y fuentes personalizados */
+@theme inline {
+  --color-ink: var(--ink);
+  --color-bone: var(--bone);
+  --color-ultra: var(--ultra);
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+::selection {
+  background: var(--ultra);
+  color: var(--bone);
+}
+
+/* Foco de luz del Hero: la capa de color solo se ve dentro del círculo */
+.spotlight-layer {
+  -webkit-mask-image: radial-gradient(
+    circle 300px at var(--mx, 68%) var(--my, 38%),
+    #000 0%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle 300px at var(--mx, 68%) var(--my, 38%),
+    #000 0%,
+    transparent 100%
+  );
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+}
