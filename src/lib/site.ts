@@ -1,9 +1,9 @@
 // Cambia estos datos una sola vez; toda la web se actualiza.
 export const site = {
   artist: "Jair Trillo",
-  title: "Jair Trillo | Pintura contemporánea",
+  title: "mcobromucho | Arte contemporáneo · Obra original",
   description:
-    "Pintura contemporánea: obras originales en venta, comisiones y alianzas con marcas y patrocinadores.",
+    "Mcobromucho: espacio de venta y difusión de arte contemporáneo y obras originales de Jair Trillo. Arte para tu hogar, proyecto o marca.",
   email: "mcobromucho@gmail.com",
   instagram: "https://www.instagram.com/mcobromucho/",
   tiktok: "https://www.tiktok.com/@mcobromucho",
@@ -13,11 +13,10 @@ export const site = {
     { label: "Alianzas", href: "#alianzas" },
     { label: "Comunidad", href: "#comunidad" },
   ],
-  // Cinta de prueba social en la portada: usa solo datos reales.
+  // Cinta de texto en la portada.
   proof: [
-    "Obras originales con certificado",
-    "Envíos internacionales",
-    "Abierta a colaboraciones con marcas",
-    "Edición nueva cada mes",
+    "Arte contemporáneo",
+    "Obra original",
+    "Arte para tu hogar, proyecto o marca",
   ],
 } as const;
