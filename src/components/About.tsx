@@ -1,11 +1,21 @@
-import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import PhotoStack, { type Photo } from "@/components/PhotoStack";
 import { site } from "@/lib/site";
 
-interface AboutProps {
-  /** Ruta de tu retrato en /public, ej: "/artista.jpg". Si falta, se muestra un degradado. */
-  portrait?: string;
-}
+// Fotos de la galería. La primera es el autorretrato que ya está en tu proyecto.
+// Para agregar más: sube la foto a la carpeta /public y añade una línea aquí,
+// con el mismo formato, antes del corchete de cierre ].
+const photos: Photo[] = [
+  {
+    src: "/obras/obra-06.png",
+    alt: "Autorretrato Xalapa, acrílico y técnica mixta sobre lienzo",
+  },
+  {
+    src: "/yo-02.jpg",
+    alt: "Retrato del artista con chamarra de mezclilla",
+  },
+  // { src: "/yo-03.jpg", alt: "Descripción de la foto" },
+];
 
 // Lo que una marca recibe al trabajar contigo. Deja solo lo que puedas cumplir.
 const offers = [
@@ -14,32 +24,13 @@ const offers = [
   "Trato sereno, comunicación clara y fechas acordadas",
 ];
 
-export default function About({ portrait }: AboutProps) {
+export default function About() {
   return (
     <section id="sobre-mi" className="border-t border-bone/10 py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-5">
-        {/* Retrato */}
+        {/* Fotos */}
         <Reveal className="md:col-span-2">
-          <div className="relative aspect-[3/4] overflow-hidden bg-bone/5">
-            {portrait ? (
-              <Image
-                src={portrait}
-                alt={`Retrato de ${site.artist} en su estudio`}
-                fill
-                sizes="(min-width: 768px) 40vw, 100vw"
-                className="object-cover"
-              />
-            ) : (
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "radial-gradient(60% 55% at 35% 35%, #4f5bff, transparent 70%), radial-gradient(50% 50% at 70% 75%, #ff5a36, transparent 70%), #141416",
-                }}
-              />
-            )}
-          </div>
+          <PhotoStack photos={photos} />
         </Reveal>
 
         {/* Texto */}
