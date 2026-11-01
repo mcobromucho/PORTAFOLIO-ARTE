@@ -1,14 +1,15 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import AmbientBg from "@/components/AmbientBg";
 
 // Capa de color "pintada": solo se revela bajo el cursor.
+// (Se quitó el color base #0c0c0d para que la foto se vea también bajo el foco.)
 const paint = `
   radial-gradient(38% 48% at 28% 42%, #ff5a36 0%, transparent 70%),
   radial-gradient(34% 44% at 72% 28%, #4f5bff 0%, transparent 70%),
-  radial-gradient(40% 40% at 58% 78%, #f2c14e 0%, transparent 70%),
-  #0c0c0d
+  radial-gradient(40% 40% at 58% 78%, #f2c14e 0%, transparent 70%)
 `;
 
 const proof = [
@@ -41,6 +42,17 @@ export default function Hero() {
       onPointerMove={handleMove}
       className="relative flex min-h-svh flex-col justify-end overflow-hidden"
     >
+      {/* Foto de fondo. Para cambiarla, cambia el src por otro archivo de /public */}
+      <Image
+        src="/image.png"
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+      />
+
       {/* Fondo animado de luz suave */}
       <AmbientBg />
 
@@ -50,7 +62,14 @@ export default function Hero() {
         className="spotlight-layer absolute inset-0"
         style={{ background: paint }}
       />
-      {/* Velo oscuro para que el texto siempre se lea bien */}
+
+      {/* Velo oscuro lateral: protege el texto, que va a la izquierda */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/45 to-transparent"
+      />
+
+      {/* Velo oscuro inferior (el que ya tenías) */}
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/10"
