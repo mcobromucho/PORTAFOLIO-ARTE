@@ -116,14 +116,14 @@ export default function Hero() {
           a coleccionistas y amantes del arte mediante una selección de pinturas
           y piezas gráficas, con asesoría personalizada y una experiencia de
           compra segura para quienes buscan incorporar arte a su colección,
-          hogar o proyecto.
+          proyecto o marca.
         </p>
 
         <p
           className="hero-fade mt-6 font-serif text-2xl italic text-bone"
           style={{ "--i": 10 } as Idx}
         >
-          Arte para tu hogar, proyecto o marca.
+          Arte para tu colección, proyecto o marca.
         </p>
 
         <div
