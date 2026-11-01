@@ -115,8 +115,7 @@ export default function Hero() {
           contemporáneo y obras originales. Acercamos el trabajo de Jair Trillo
           a coleccionistas y amantes del arte mediante una selección de pinturas
           y piezas gráficas, con asesoría personalizada y una experiencia de
-          compra segura para quienes buscan incorporar arte a su colección,
-          proyecto o marca.
+          compra segura.
         </p>
 
         <p
